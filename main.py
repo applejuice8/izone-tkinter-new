@@ -3,22 +3,13 @@ from itertools import product
 import tkinter as tk
 import pandas as pd
 from pathlib import Path
-from selenium.common.exceptions import NoSuchElementException, TimeoutException
-from selenium.webdriver.support import expected_conditions as EC
 from webdriver_manager.chrome import ChromeDriverManager
-from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.common.by import By
 from selenium import webdriver
-from pathlib import Path
-import pandas as pd
-import keyring
-import time
 
-# Modify
+# Can Modify
 # --------------------------------------------------------
-headless = False
 my_subjects = [
     'web fundamentals',
     'operating system fundamentals',
@@ -28,6 +19,7 @@ my_subjects = [
 
 
 # Set up driver
+headless = False
 def init_driver(headless):
     print('Setting up webdriver...')
 
