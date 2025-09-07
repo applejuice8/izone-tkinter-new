@@ -15,6 +15,7 @@ my_subjects = [
     'operating system fundamentals',
     'information systems analysis & design'
 ]
+testing = True
 # --------------------------------------------------------
 
 
@@ -316,7 +317,7 @@ class TimetableGUI:
             try:
                 # from select_slot import select_slot
                 from slot_selector import select_slot
-                select_slot(driver=driver, testing=True, headless=False,
+                select_slot(driver=driver, testing=testing, headless=headless,
                             subjects=subjects, l_groups=l_groups,
                             p_groups=p_groups, w_groups=w_groups)
                 log("Done!")
@@ -386,10 +387,8 @@ class TimetableGUI:
         builtins.print = patched_print
 
         try:
-            # from scrape_slots import scrape_slots
-            # scrape_slots(testing=True, headless=True)
             from slot_scraper import start_scrape
-            start_scrape(testing=True, driver=driver, headless=True, my_subjects=my_subjects)
+            start_scrape(testing=testing, driver=driver, headless=headless, my_subjects=my_subjects)
 
             # Reload and reprocess the data
             global df, lectures, practicals, workshops, practical_groups, workshop_groups, subject_combinations
