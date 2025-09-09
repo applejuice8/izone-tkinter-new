@@ -198,7 +198,7 @@ class TimetableGUI:
         self.master = master
         master.title("Class Schedule Viewer")
         master.configure(bg="black")
-        master.geometry("1200x800")
+        master.geometry("1440x550")
 
         self.main_frame = tk.Frame(master, bg="black")
         self.main_frame.pack(fill=tk.BOTH, expand=True)
@@ -322,13 +322,13 @@ class TimetableGUI:
                             subjects=subjects, l_groups=l_groups,
                             p_groups=p_groups, w_groups=w_groups)
                 log("Done!")
-                popup.after(2000, popup.destroy)
+                popup.after(1500, popup.destroy)
             finally:
                 builtins.print = original_print
 
         except Exception as e:
             log(f"[ERROR] {e}")
-            popup.after(4000, popup.destroy)
+            popup.after(2000, popup.destroy)
 
     def apply_filters(self):
         self.filtered_combos = filter_schedules(
@@ -440,11 +440,11 @@ class TimetableGUI:
             self.show_schedule()
 
             log("Done!")
-            popup.after(2000, popup.destroy)
+            popup.after(1500, popup.destroy)
 
         except Exception as e:
             log(f"[ERROR] {e}")
-            popup.after(4000, popup.destroy)
+            popup.after(2000, popup.destroy)
 
         finally:
             builtins.print = original_print
