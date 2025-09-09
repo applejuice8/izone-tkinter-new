@@ -26,7 +26,8 @@ def init_driver(headless):
 
     options = Options()
     if headless:
-        options.add_argument('--headless')
+        options.add_argument('--headless=new')
+    options.page_load_strategy = 'eager'
 
     # Use Service with WebDriver Manager
     service = Service(ChromeDriverManager().install())
